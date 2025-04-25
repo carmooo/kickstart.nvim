@@ -1,8 +1,8 @@
 --[[
 
 =====================================================================
-==================== READ THIS BEFORE CONTINUING ====================
 =====================================================================
+==================== READ THIS BEFORE CONTINUING ====================
 ========                                    .-----.          ========
 ========         .----------------------.   | === |          ========
 ========         |.-""""""""""""""""""-.|   |-----|          ========
@@ -200,6 +200,13 @@ vim.keymap.set('n', '<C-k>', '<C-w><C-k>', { desc = 'Move focus to the upper win
 -- vim.keymap.set("n", "<C-S-l>", "<C-w>L", { desc = "Move window to the right" })
 -- vim.keymap.set("n", "<C-S-j>", "<C-w>J", { desc = "Move window to the lower" })
 -- vim.keymap.set("n", "<C-S-k>", "<C-w>K", { desc = "Move window to the upper" })
+
+-- Keybinds to move visual selection up or down
+vim.keymap.set('n', '<leader>j', ':m .+1<CR>==', { desc = 'Move line down' })
+vim.keymap.set('n', '<leader>k', ':m .-2<CR>==', { desc = 'Move line up' })
+
+vim.keymap.set('v', '<leader>j', ":m '>+1<CR>gv=gv", { desc = 'Move selection down' })
+vim.keymap.set('v', '<leader>k', ":m '<-2<CR>gv=gv", { desc = 'Move selection up' })
 
 -- [[ Basic Autocommands ]]
 --  See `:help lua-guide-autocommands`
