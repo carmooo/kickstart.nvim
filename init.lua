@@ -744,6 +744,8 @@ require('lazy').setup({
           end,
         },
       }
+      -- unfortunately swift LSP comes with XCode and is not available from Mason so we have to setup separately
+      require('lspconfig').sourcekit.setup {}
     end,
   },
 
